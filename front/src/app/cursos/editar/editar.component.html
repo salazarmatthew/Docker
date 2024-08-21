@@ -1,0 +1,12 @@
+<!-- src/app/cursos/editar-curso/editar-curso.component.html -->
+<div class="editar-curso-container">
+    <h2>Editar Curso</h2>
+    <form (ngSubmit)="editarCurso()" class="curso-form">
+      <div class="form-group">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" [(ngModel)]="curso.nombre" name="nombre" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Guardar</button>
+    </form>
+  </div>
+  

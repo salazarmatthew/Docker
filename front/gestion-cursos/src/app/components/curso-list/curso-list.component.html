@@ -1,0 +1,21 @@
+<h2>Lista de Cursos</h2>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let curso of cursos">
+      <td>{{ curso.id }}</td>
+      <td>{{ curso.nombre }}</td>
+      <td>
+        <button (click)="eliminarCurso(curso.id)">Eliminar</button>
+        <button [routerLink]="['/cursos', curso.id]">Ver Detalles</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<button routerLink="/cursos/nuevo">Agregar Curso</button>

@@ -1,0 +1,102 @@
+/* src/app/usuarios/listar-usuarios/listar-usuarios.component.css */
+.usuarios-container {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 95%; /* Ancho mayor para el contenedor */
+  max-width: 1200px;
+  margin: 20px auto;
+  box-sizing: border-box;
+}
+
+h2 {
+  color: #4CAF50;
+  text-align: center;
+  margin-bottom: 30px; /* Mayor separación entre título y contenido */
+}
+
+.crear-usuario-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px; /* Mayor separación entre el botón y la tabla */
+  padding: 12px 24px;
+}
+
+.crear-usuario-btn i {
+  margin-right: 8px;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+.usuarios-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.usuarios-table th, .usuarios-table td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+.usuarios-table th {
+  background: #4CAF50;
+  color: #fff;
+}
+
+.usuarios-table td {
+  background: #fff;
+}
+
+.usuarios-table tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+.usuarios-table tr:hover {
+  background: #f0f2f5;
+}
+
+.btn {
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  font-size: 14px;
+  padding: 10px 20px;
+  text-align: center;
+  transition: background 0.3s ease;
+}
+
+.btn-danger {
+  background: #e74c3c;
+}
+
+.btn-danger:hover {
+  background: #c0392b;
+}
+
+.btn-warning {
+  background: #f39c12;
+}
+
+.btn-warning:hover {
+  background: #e67e22;
+}
+
+.btn-primary {
+  background: #2ecc71;
+}
+
+.btn-primary:hover {
+  background: #27ae60;
+}
+
+.btn i {
+  margin-right: 8px;
+}

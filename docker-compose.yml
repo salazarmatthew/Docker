@@ -1,0 +1,70 @@
+version: '3.8'
+
+services:
+  msvc-usuarios:
+    build:
+      context: ./msvc-usuarios
+      dockerfile: Dockerfile
+    ports:
+      - "8001:8080" # Mapea el puerto 8080 del contenedor al puerto 8001 del host
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://db1:3306/microservice1db
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=root
+      - SPRING_DATASOURCE_DRIVER_CLASS_NAME=com.mysql.cj.jdbc.Driver
+    networks:
+      - mynetwork
+    depends_on:
+      - db1
+
+  msvc-cursos:
+    build:
+      context: ./msvc-cursos
+      dockerfile: Dockerfile
+    ports:
+      - "8002:8080"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db2:5432/microservice2db
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=postgres
+    networks:
+      - mynetwork
+    depends_on:
+      - db2
+
+  frontend:
+    build:
+      context: ./front
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    networks:
+      - mynetwork
+
+  db1:
+    image: mysql:latest
+    environment:
+      MYSQL_DATABASE: microservice1db
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - db1_data:/var/lib/mysql
+    networks:
+      - mynetwork
+
+  db2:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: microservice2db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - db2_data:/var/lib/postgresql/data
+    networks:
+      - mynetwork
+
+volumes:
+  db1_data:
+  db2_data:
+
+networks:
+  mynetwork:

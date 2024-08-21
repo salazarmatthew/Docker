@@ -1,0 +1,74 @@
+/* src/app/cursos/crear-curso/crear-curso.component.css */
+
+.crear-curso-container {
+  padding: 30px;
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #ffffff; /* Color de fondo blanco para el contenedor */
+  border-radius: 12px; /* Bordes más redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra más prominente */
+}
+
+h2 {
+  margin-bottom: 30px; /* Más espacio debajo del título */
+  font-size: 28px; /* Tamaño de fuente más grande */
+  color: #4CAF50; /* Color verde del texto */
+  text-align: center; /* Centra el título */
+}
+
+.curso-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 20px; /* Más espacio entre los campos del formulario */
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 18px; /* Tamaño de fuente más grande */
+  color: #333;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 12px; /* Mayor espacio interno */
+  border: 1px solid #ccc;
+  border-radius: 8px; /* Bordes más redondeados */
+  font-size: 16px;
+  box-sizing: border-box; /* Incluye padding en el ancho total */
+  transition: border-color 0.3s ease; /* Transición suave del borde */
+}
+
+input[type="text"]:focus {
+  border-color: #4CAF50; /* Color del borde al enfocar */
+  outline: none;
+}
+
+.btn {
+  padding: 12px 24px; /* Mayor tamaño del botón */
+  border: none;
+  border-radius: 8px; /* Bordes más redondeados */
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px; /* Más espacio superior */
+  display: inline-block; /* Mantiene el botón en línea */
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Transiciones suaves */
+}
+
+.btn-success {
+  background-color: #4CAF50;
+  color: #fff;
+}
+
+.btn-success:hover {
+  background-color: #45a049;
+  transform: scale(1.02); /* Efecto de agrandamiento al pasar el ratón */
+}
+
+.btn-success:focus {
+  outline: none; /* Elimina el contorno al hacer clic */
+}

@@ -1,0 +1,191 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f0f2f5;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.cursos-container {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 95%; /* Ancho mayor para el contenedor */
+  max-width: 1200px;
+  margin: 20px auto;
+  box-sizing: border-box; /* Incluir padding y border en el ancho total */
+}
+
+h2 {
+  color: #4CAF50;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+h3 {
+  color: #4CAF50;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.add-curso-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px; /* Mayor separación debajo del botón */
+  padding: 15px 30px; /* Asegura que el botón sea más grande */
+  background-color: #2ecc71; /* Color de fondo del botón */
+  color: #fff; /* Color del texto del botón */
+  border: none; /* Sin borde */
+  border-radius: 8px; /* Bordes redondeados */
+  font-size: 16px; /* Tamaño de fuente del botón */
+  text-align: center;
+  transition: background 0.3s ease, transform 0.2s ease; /* Efectos de transición */
+}
+
+.add-curso-btn i {
+  margin-right: 10px; /* Mayor espacio entre el icono y el texto */
+}
+
+.add-curso-btn:hover {
+  background-color: #27ae60; /* Color más oscuro al pasar el ratón */
+  transform: scale(1.05); /* Agranda el botón al pasar el ratón */
+}
+
+.add-curso-btn:focus {
+  outline: none; /* Elimina el contorno al hacer clic */
+}
+
+
+.table-container {
+  overflow-x: auto;
+}
+
+.cursos-table, .asignaciones-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.cursos-table th, .asignaciones-table th {
+  background: #4CAF50;
+  color: #fff;
+  padding: 12px;
+  text-align: left;
+}
+
+.cursos-table td, .asignaciones-table td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+.cursos-table tr:hover, .asignaciones-table tr:hover {
+  background: #f0f2f5;
+}
+
+.btn {
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  margin: 0 5px;
+  padding: 12px 24px; /* Mayor tamaño de padding */
+  text-align: center;
+  transition: background 0.3s ease;
+}
+
+.btn-danger {
+  background: #e74c3c;
+}
+
+.btn-danger:hover {
+  background: #c0392b;
+}
+
+.btn-info {
+  background: #3498db;
+}
+
+.btn-info:hover {
+  background: #2980b9;
+}
+
+.btn-primary {
+  background: #2ecc71; /* Color verde para el botón Agregar Curso */
+}
+
+.btn-primary:hover {
+  background: #27ae60;
+}
+
+.btn-success {
+  background: #4CAF50;
+}
+
+.btn-success:hover {
+  background: #45a049;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-control {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  width: 100%;
+}
+
+.asignacion-form {
+  background: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul li {
+  background: #e0f7fa;
+  border: 1px solid #b2ebf2;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  padding: 10px;
+}
+
+/* Asegura que el footer esté al fondo */
+.footer {
+  background: #4CAF50;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  color: white;
+  position: relative;
+  bottom: 0;
+}
+
+.custom-snackbar {
+  color: #fff;
+  background-color: #009688;
+}
+
+.custom-snackbar .mat-simple-snackbar-action {
+  color: #ffeb3b;
+}

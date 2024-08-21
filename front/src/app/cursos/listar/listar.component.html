@@ -1,0 +1,88 @@
+<!-- src/app/cursos/listar/listar.component.html -->
+<p-messages></p-messages>
+
+<div class="cursos-container">
+  <h2>Cursos Disponibles</h2>
+  <div class="boton-container" style="margin-bottom: 40px;">
+    <button class="btn btn-primary add-curso-btn" routerLink="/cursos/crear">
+      <i class="fas fa-plus-circle"></i> Agregar Curso
+    </button>
+  </div>
+
+  <!-- Tabla de Cursos -->
+  <div class="table-container">
+    <table class="cursos-table">
+      <thead>
+        <tr>
+          <th>Cursos</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let curso of cursos">
+          <td>{{ curso.nombre }}</td>
+          <td>
+            <button class="btn btn-danger" (click)="eliminarCurso(curso.id)">
+              <i class="fas fa-trash-alt"></i> Eliminar
+            </button>
+            <button class="btn btn-info" [routerLink]="['/cursos/editar', curso.id]">
+              <i class="fas fa-edit"></i> Editar
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Botón para mostrar el formulario de asignación -->
+  <button class="btn btn-primary asignar-btn" (click)="mostrarFormularioAsignacion = !mostrarFormularioAsignacion">
+    <i class="fas fa-user-plus"></i> {{ mostrarFormularioAsignacion ? 'Cancelar' : 'Asignar Estudiante' }}
+  </button>
+
+  <!-- Formulario de Asignación -->
+  <div *ngIf="mostrarFormularioAsignacion" class="asignacion-form">
+    <h3>Asignar Estudiante </h3>
+    <form (ngSubmit)="asignarUsuario()">
+      <div class="form-group">
+        <label for="curso">Curso:</label>
+        <select id="curso" [(ngModel)]="cursoSeleccionado" name="curso" class="form-control">
+          <option *ngFor="let curso of cursos" [value]="curso.id">{{ curso.nombre }}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="usuario">Usuario:</label>
+        <select id="usuario" [(ngModel)]="usuarioSeleccionado" name="usuario" class="form-control">
+          <option *ngFor="let usuario of usuarios" [ngValue]="usuario">{{ usuario.nombre }}</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-success">
+        <i class="fas fa-check-circle"></i> Asignar
+      </button>
+    </form>
+  </div>
+
+  <!-- Tabla de Asignaciones -->
+  <h3>Asignaciones de Cursos para Estudiantes</h3>
+  <div class="table-container">
+    <table class="asignaciones-table">
+      <thead>
+        <tr>
+          <th>Cursos</th>
+          <th>Estudiantes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let curso of cursos">
+          <td>{{ curso.nombre }}</td>
+          <td>
+            <ul>
+              <li *ngFor="let cu of curso.cursoUsuarios">
+                {{ getUsuarioNombre(cu.usuarioId) }}
+              </li>
+            </ul>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

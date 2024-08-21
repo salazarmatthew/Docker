@@ -1,0 +1,21 @@
+<h2>Detalles del Usuario</h2>
+<form (ngSubmit)="guardar()">
+  <div>
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" [(ngModel)]="usuario.nombre" name="nombre" required>
+  </div>
+  <div>
+    <label for="email">Email:</label>
+    <input type="email" id="email" [(ngModel)]="usuario.email" name="email" required>
+  </div>
+  <div>
+    <label for="password">Password:</label>
+    <input type="password" id="password" [(ngModel)]="usuario.password" name="password" required>
+  </div>
+  <div>
+    <label for="tipo">Tipo:</label>
+    <input type="text" id="tipo" [(ngModel)]="usuario.tipo" name="tipo" required>
+  </div>
+  <button type="submit">Guardar</button>
+  <button type="button" (click)="router.navigate(['/usuarios'])">Cancelar</button>
+</form>

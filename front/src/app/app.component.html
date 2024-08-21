@@ -1,0 +1,20 @@
+<body>
+  <div class="header">
+    <h1>Sistema de Matriculación</h1>
+    <img src="https://res.cloudinary.com/dngl2piwn/image/upload/fl_preserve_transparency/v1724094236/graduado_yh6bih.jpg?_s=public-apps" alt="Logo" class="header-logo">
+  </div>
+  <div class="button-container">
+    <div class="nav-item" (click)="redirectToUsuarios()">
+      <img src="https://res.cloudinary.com/dngl2piwn/image/upload/fl_preserve_transparency/v1724094235/aprender-en-linea_rxxvgo.jpg?_s=public-apps" alt="Usuario" class="nav-image">
+      <span class="nav-text">Registro de Estudiantes</span>
+    </div>
+    <div class="nav-item" (click)="redirectToCursos()">
+      <img src="https://res.cloudinary.com/dngl2piwn/image/upload/fl_preserve_transparency/v1724094236/tutor_cz7udq.jpg?_s=public-apps" alt="Cursos" class="nav-image">
+      <span class="nav-text">Administración de Cursos</span>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+  <div class="footer">
+    <p>&copy; 2024 Mi Aplicación. Todos los derechos reservados.</p>
+  </div>
+</body>

@@ -1,0 +1,35 @@
+<!-- src/app/usuarios/listar-usuarios/listar-usuarios.component.html -->
+<div class="usuarios-container">
+  <h2>Estudiantes Matriculados</h2>
+  <button class="btn btn-primary crear-usuario-btn" routerLink="/usuarios/crear">
+    <i class="fas fa-user-plus"></i> Crear Estudiante
+  </button>
+
+  <div class="table-container">
+    <table class="usuarios-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Email</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let usuario of usuarios">
+          <td>{{ usuario.id }}</td>
+          <td>{{ usuario.nombre }}</td>
+          <td>{{ usuario.email }}</td>
+          <td>
+            <button class="btn btn-danger" (click)="eliminarUsuario(usuario.id)">
+              <i class="fas fa-trash-alt"></i> Eliminar
+            </button>
+            <button class="btn btn-warning" [routerLink]="['/usuarios/editar', usuario.id]">
+              <i class="fas fa-edit"></i> Editar
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
